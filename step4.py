@@ -22,12 +22,16 @@ with open('Undetermined_S0_R1_001_H10k.fastq', 'r') as f1, open('Undetermined_S0
         f2_unit.next()
         f2_sequence = f2_unit.next()
         new_header += str(f2_sequence).rstrip()
+        f2_unit.next()
+        f2_unit.next()
 
         new_header += "+"
 
         f3_unit.next()
         f3_sequence = f3_unit.next()
         new_header += str(f3_sequence).rstrip()
+        f3_unit.next()
+        f3_unit.next()
 
         array.append(new_header)
         array.append(str(f1_unit.next()).rstrip())
@@ -38,3 +42,6 @@ with open('Undetermined_S0_R1_001_H10k.fastq', 'r') as f1, open('Undetermined_S0
         output_file.write(new_unit)
 
 output_file.close()
+f1.close()
+f2.close()
+f3.close()
